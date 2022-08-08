@@ -6,7 +6,7 @@ public class TicketCounter {
 	void bookSeat(String name, int numberOfSeats)throws NoSeatAvailableException {
 		try {
 			if(availableSeats>=numberOfSeats) {
-			System.out.println("seats Booked: "+numberOfSeats);
+			System.out.println(name+" Booked "+numberOfSeats+" seats");
 			availableSeats=availableSeats-numberOfSeats;
 			}else {
 				throw new NoSeatAvailableException("no seats available");
