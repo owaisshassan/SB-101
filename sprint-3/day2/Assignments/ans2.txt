@@ -1,0 +1,4 @@
+1. A primary key is a column of table which uniquely identifies each tuple (row) in that table. Primary key enforces integrity constraints to the table. Only one primary key is allowed to use in a table. The primary key does not accept the any duplicate and NULL values. The primary key value in a table changes very rarely so it is chosen with care where the changes can occur in a seldom manner. A primary key of one table can be referenced by foreign key of another table. 
+Unique key constraints also identifies an individual tuple uniquely in a relation or table. A table can have more than one unique key unlike primary key. Unique key constraints can accept only one NULL value for column. Unique constraints are also referenced by the foreign key of another table. It can be used when someone wants to enforce unique constraints on a column and a group of columns which is not a primary key. 
+
+2. False

@@ -1,0 +1,19 @@
+mysql> select * from city;
++------+---------------+-------------+------------+------------+
+| ID   | NAME          | COUNTRYCODE | DISTRICT   | POPULATION |
++------+---------------+-------------+------------+------------+
+| 3878 | Scottsdale    | USA         | Arizona    |     202705 |
+| 3965 | Corona        | USA         | California |      90000 |
+| 3973 | Concord       | USA         | California |     121780 |
+| 3977 | Cedar Rapids  | USA         | Lowa       |     120758 |
+| 3982 | Coral Springs | USA         | Florida    |      87456 |
++------+---------------+-------------+------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select SUM(population) from city where district="california";
++-----------------+
+| SUM(population) |
++-----------------+
+|          211780 |
++-----------------+
+1 row in set (0.00 sec)

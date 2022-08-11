@@ -1,0 +1,41 @@
+mysql> create table STUDENT(S_ID varchar(2), S_NAME VARCHAR(20),S_ADDRESS VARCHAR(20),S_PHONE varchar(10),S_AGE INT);
+Query OK, 0 rows affected (0.60 sec)
+
+mysql> insert into student values("S1","RAM","DELHI","9455123451",18);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into student values("S2","RAMESH","GURGAON","9652431543",18);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into student values("S3","SUJIT","CHANDIGARH","9156253131",20);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into student values("S4","SURESH","DELHI","9156768971",18);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into student values("S5","RATAN","DELHI","9567890876",20);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> SELECT * FROM STUDENT;
++------+--------+------------+------------+-------+
+| S_ID | S_NAME | S_ADDRESS  | S_PHONE    | S_AGE |
++------+--------+------------+------------+-------+
+| S1   | RAM    | DELHI      | 9455123451 |    18 |
+| S2   | RAMESH | GURGAON    | 9652431543 |    18 |
+| S3   | SUJIT  | CHANDIGARH | 9156253131 |    20 |
+| S4   | SURESH | DELHI      | 9156768971 |    18 |
+| S5   | RATAN  | DELHI      | 9567890876 |    20 |
++------+--------+------------+------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into course values("C1","DSA"),("C2","JAVA"), ("C3","MERN");
+mysql> SELECT * FROM COURSE;
++------+--------+
+| C_ID | C_NAME |
++------+--------+
+| C1   | DSA    |
+| C2   | JAVA   |
+| C3   | MERN   |
++------+--------+
+3 rows in set (0.00 sec)
+

@@ -1,0 +1,114 @@
+mysql> create table employee(empID int,EmpFname varchar(10), EmpLname varchar(10), Department varchar(20),Project varchar(10),Address varchar(20),DOB varchar(10),Gender varchar(1),Salary int, PRIMARY KEY (empID));
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> insert into employee values(1,"Sanjay","Mehra","HR","P1","Hyderabad(HYD)","01/12/1976","M",50000);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> insert into employee values(2,"Ananya","Mishra","Admin","P2","Delhi(DEL)","02/05/1968","F",75000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into employee values(3,"Rohan","Diwan","Account","P1","Mumbai(BOM)","01/01/1980","M",90000);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into employee values(4,"Sonia","Kulkarni","HR","P3","Hyderabad(HYD)","02/05/1992","F",50000);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into employee values(5,"Priya","Thakur","Development","P2","Bangalore","23/02/1992","F",100000);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select * from employee;
++-------+----------+----------+-------------+---------+----------------+------------+--------+--------+
+| empID | EmpFname | EmpLname | Department  | Project | Address        | DOB        | Gender | Salary |
++-------+----------+----------+-------------+---------+----------------+------------+--------+--------+
+|     1 | Sanjay   | Mehra    | HR          | P1      | Hyderabad(HYD) | 01/12/1976 | M      |  50000 |
+|     2 | Ananya   | Mishra   | Admin       | P2      | Delhi(DEL)     | 02/05/1968 | F      |  75000 |
+|     3 | Rohan    | Diwan    | Account     | P1      | Mumbai(BOM)    | 01/01/1980 | M      |  90000 |
+|     4 | Sonia    | Kulkarni | HR          | P3      | Hyderabad(HYD) | 02/05/1992 | F      |  50000 |
+|     5 | Priya    | Thakur   | Development | P2      | Bangalore      | 23/02/1992 | F      | 100000 |
++-------+----------+----------+-------------+---------+----------------+------------+--------+--------+
+5 rows in set (0.00 sec)
+
+1. mysql> select * from employee WHERE Department="HR";
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+| empID | EmpFname | EmpLname | Department | Project | Address        | DOB        | Gender | Salary |
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+|     1 | Sanjay   | Mehra    | HR         | P1      | Hyderabad(HYD) | 01/12/1976 | M      |  50000 |
+|     4 | Sonia    | Kulkarni | HR         | P3      | Hyderabad(HYD) | 02/05/1992 | F      |  50000 |
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+2 rows in set (0.00 sec)
+
+2. mysql> select * from employee where Gender="F";
++-------+----------+----------+-------------+---------+----------------+------------+--------+--------+
+| empID | EmpFname | EmpLname | Department  | Project | Address        | DOB        | Gender | Salary |
++-------+----------+----------+-------------+---------+----------------+------------+--------+--------+
+|     2 | Ananya   | Mishra   | Admin       | P2      | Delhi(DEL)     | 02/05/1968 | F      |  75000 |
+|     4 | Sonia    | Kulkarni | HR          | P3      | Hyderabad(HYD) | 02/05/1992 | F      |  50000 |
+|     5 | Priya    | Thakur   | Development | P2      | Bangalore      | 23/02/1992 | F      | 100000 |
++-------+----------+----------+-------------+---------+----------------+------------+--------+--------+
+3 rows in set (0.00 sec)
+
+3. mysql> select * from employee where Gender="F" AND Department="HR";
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+| empID | EmpFname | EmpLname | Department | Project | Address        | DOB        | Gender | Salary |
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+|     4 | Sonia    | Kulkarni | HR         | P3      | Hyderabad(HYD) | 02/05/1992 | F      |  50000 |
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+1 row in set (0.00 sec)
+
+4. mysql> select * from employee where LEFT (EmpFname,1) in ('A','E','I','O','U') ;
++-------+----------+----------+------------+---------+------------+------------+--------+--------+
+| empID | EmpFname | EmpLname | Department | Project | Address    | DOB        | Gender | Salary |
++-------+----------+----------+------------+---------+------------+------------+--------+--------+
+|     2 | Ananya   | Mishra   | Admin      | P2      | Delhi(DEL) | 02/05/1968 | F      |  75000 |
++-------+----------+----------+------------+---------+------------+------------+--------+--------+
+1 row in set (0.06 sec)
+
+5. mysql> select * from employee where Gender="M" AND EmpFname IN ('_a%','_e%','_i%','_o%','_u%');
+
+6. mysql> select department  from employee;
++-------------+
+| department  |
++-------------+
+| HR          |
+| Admin       |
+| Account     |
+| HR          |
+| Development |
++-------------+
+5 rows in set (0.00 sec)
+
+7. mysql> select * from employee where Gender="F" AND Salary<75000;
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+| empID | EmpFname | EmpLname | Department | Project | Address        | DOB        | Gender | Salary |
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+|     4 | Sonia    | Kulkarni | HR         | P3      | Hyderabad(HYD) | 02/05/1992 | F      |  50000 |
++-------+----------+----------+------------+---------+----------------+------------+--------+--------+
+1 row in set (0.05 sec)
+
+8.mysql> select count(*) from employee where Salary BETWEEN 50000 AND 100000;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.02 sec)
+
+9. mysql> select count(DISTINCT project) from employee;
++-------------------------+
+| count(DISTINCT project) |
++-------------------------+
+|                       3 |
++-------------------------+
+1 row in set (0.00 sec)
+
+10. mysql> select department, count(*) from employee GROUP BY department ORDER BY COUNT(*) DESC;
++-------------+----------+
+| department  | count(*) |
++-------------+----------+
+| HR          |        2 |
+| Admin       |        1 |
+| Account     |        1 |
+| Development |        1 |
++-------------+----------+
+4 rows in set (0.00 sec)
+

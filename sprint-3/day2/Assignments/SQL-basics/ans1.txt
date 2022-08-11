@@ -1,0 +1,40 @@
+mysql> create table CITY(ID int,NAME varchar(17), COUNTRYCODE varchar(3),DISTRICT varchar(20), POPULATION int);
+Query OK, 0 rows affected (0.30 sec)
+
+mysql> insert into city values(3878,"Scottsdale","USA","Arizona",202705);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into city values(3965,"Corona","USA","California",90000);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into city values(3973,"Concord","USA","California",121780);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into city values(3977,"Cedar Rapids","USA","Lowa",120758);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into city values(3982,"Coral Springs","USA","Florida",87456);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from city;
++------+---------------+-------------+------------+------------+
+| ID   | NAME          | COUNTRYCODE | DISTRICT   | POPULATION |
++------+---------------+-------------+------------+------------+
+| 3878 | Scottsdale    | USA         | Arizona    |     202705 |
+| 3965 | Corona        | USA         | California |      90000 |
+| 3973 | Concord       | USA         | California |     121780 |
+| 3977 | Cedar Rapids  | USA         | Lowa       |     120758 |
+| 3982 | Coral Springs | USA         | Florida    |      87456 |
++------+---------------+-------------+------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from city WHERE countrycode="USA" AND population>100000;
++------+--------------+-------------+------------+------------+
+| ID   | NAME         | COUNTRYCODE | DISTRICT   | POPULATION |
++------+--------------+-------------+------------+------------+
+| 3878 | Scottsdale   | USA         | Arizona    |     202705 |
+| 3973 | Concord      | USA         | California |     121780 |
+| 3977 | Cedar Rapids | USA         | Lowa       |     120758 |
++------+--------------+-------------+------------+------------+
+3 rows in set (0.00 sec)
+
