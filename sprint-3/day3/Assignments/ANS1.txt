@@ -39,3 +39,33 @@ mysql> SELECT * FROM COURSE;
 +------+--------+
 3 rows in set (0.00 sec)
 
+mysql> create table student_course(S_ID varchar(2),C_ID varchar(2));
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> insert into student_course values("S1","C1"),("S1","C3"),("S2","C1"),("S3","C2"),("S4","C2"),("S4","C3"),("S5","C2");
+Query OK, 7 rows affected (0.07 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from student_course;
++------+------+
+| S_ID | C_ID |
++------+------+
+| S1   | C1   |
+| S1   | C3   |
+| S2   | C1   |
+| S3   | C2   |
+| S4   | C2   |
+| S4   | C3   |
+| S5   | C2   |
++------+------+
+7 rows in set (0.00 sec)
+
+mysql> select s.s_id,s_name,s_address,s_phone,s_age from student s,course c,student_course sc where s.s_address="delhi" and c.c_name="java" and s.s_id=sc.s_id and c.c_id=sc.c_id;
++------+--------+-----------+------------+-------+
+| s_id | s_name | s_address | s_phone    | s_age |
++------+--------+-----------+------------+-------+
+| S4   | SURESH | DELHI     | 9156768971 |    18 |
+| S5   | RATAN  | DELHI     | 9567890876 |    20 |
++------+--------+-----------+------------+-------+
+2 rows in set (0.00 sec)
+

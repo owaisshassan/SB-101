@@ -67,3 +67,11 @@ mysql> select * from orders;
 5 rows in set (0.00 sec)
 
 
+mysql> select email, count(*) order_count  from customers c,orders o where c.customer_id=o.customer_id and o.order_placed_date BETWEEN "2015-12-31" and "2017-01-01" GROUP BY email ORDER BY order_count desc;
++--------------+-------------+
+| email        | order_count |
++--------------+-------------+
+| abc@mail.com |           2 |
+| efg@mail.com |           1 |
++--------------+-------------+
+2 rows in set (0.00 sec)
