@@ -1,0 +1,19 @@
+A).
+
+Normalization is the process of organizing data in a database. This includes creating tables and establishing relationships between those tables according to rules designed both to protect the data and to make the database more flexible by eliminating redundancy and inconsistent dependency.
+
+Redundant data wastes disk space and creates maintenance problems. If data that exists in more than one place must be changed, the data must be changed in exactly the same way in all locations. A customer address change is much easier to implement if that data is stored only in the Customers table and nowhere else in the database.
+
+It is used to remove the duplicate data and database anomalies from the relational table.
+Normalization helps to reduce redundancy and complexity by examining new data types used in the table.
+It is helpful to divide the large database table into smaller tables and link them using relationship.
+It avoids duplicate data or no repeating groups into a table.
+It reduces the chances for anomalies to occur in a database.
+
+B).
+
+Insert Anomaly: An insert anomaly occurs in the relational database when some attributes or data items are to be inserted into the database without existence of other attributes. For example, In the Student table, if we want to insert a new courseID, we need to wait until the student enrolled in a course. In this way, it is difficult to insert new record in the table. Hence, it is called insertion anomalies.
+
+Update Anomalies: The anomaly occurs when duplicate data is updated only in one place and not in all instances. Hence, it makes our data or table inconsistent state. For example, suppose there is a student 'James' who belongs to Student table. If we want to update the course in the Student, we need to update the same in the course table; otherwise, the data can be inconsistent. And it reflects the changes in a table with updated values where some of them will not.
+
+Delete Anomalies: An anomaly occurs in a database table when some records are lost or deleted from the database table due to the deletion of other records. For example, if we want to remove Trent Bolt from the Student table, it also removes his address, course and other details from the Student table. Therefore, we can say that deleting some attributes can remove other attributes of the database table.

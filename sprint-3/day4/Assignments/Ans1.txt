@@ -1,0 +1,56 @@
+A).
+
+
+
+
+B).
+ 
+mysql> CREATE TABLE STUDENTFINE(StudentID varchar(10),Name varchar(20),LicenseNo varchar(10),CarReg varchar(10),ReceiptNo varchar(10),Date DATE,OffenceCode int,Fine float, PRIMARY KEY (ReceiptNO));
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> insert into studentfine values("F1011","CK Fong","P100","JGK9201","00-345","10/03/06",2,30.00);
+Query OK, 1 row affected, 1 warning (0.07 sec)
+
+mysql> insert into studentfine values("F1011","CK Fong","P100","JGK9201","00-690","15/03/06",1,20.00);
+Query OK, 1 row affected, 1 warning (0.06 sec)
+
+mysql> insert into studentfine values("F1011","CK Fong","P100","JGK9201","00-810","20/03/06",2,30.00);
+Query OK, 1 row affected, 1 warning (0.06 sec)
+
+mysql> insert into studentfine values("L782","AdamJames","P290","JJL99","00-459","13/03/06",1,20.00);
+Query OK, 1 row affected, 1 warning (0.04 sec)
+
+mysql> insert into studentfine values("H762","MalaDewi","P764","JJK7654","00-564","12/03/06",3,40.00);
+Query OK, 1 row affected, 1 warning (0.12 sec)
+
+mysql> insert into studentfine values("H762","MalaDewi","P764","JJK7654","00-770","19/06/06",2,30.00);
+Query OK, 1 row affected, 1 warning (0.14 sec)
+
+mysql> select * from studentfine;
++-----------+-----------+-----------+---------+-----------+------------+-------------+------+
+| StudentID | Name      | LicenseNo | CarReg  | ReceiptNo | Date       | OffenceCode | Fine |
++-----------+-----------+-----------+---------+-----------+------------+-------------+------+
+| F1011     | CK Fong   | P100      | JGK9201 | 00-345    | 2010-03-06 |           2 |   30 |
+| L782      | AdamJames | P290      | JJL99   | 00-459    | 2013-03-06 |           1 |   20 |
+| H762      | MalaDewi  | P764      | JJK7654 | 00-564    | 2012-03-06 |           3 |   40 |
+| F1011     | CK Fong   | P100      | JGK9201 | 00-690    | 2015-03-06 |           1 |   20 |
+| H762      | MalaDewi  | P764      | JJK7654 | 00-770    | 2019-06-06 |           2 |   30 |
+| F1011     | CK Fong   | P100      | JGK9201 | 00-810    | 2020-03-06 |           2 |   30 |
++-----------+-----------+-----------+---------+-----------+------------+-------------+------+
+6 rows in set (0.00 sec)
+
+
+C).
+
+
+
+
+
+D).
+
+
+
+
+
+
+
