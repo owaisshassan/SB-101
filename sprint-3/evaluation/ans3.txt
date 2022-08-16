@@ -1,0 +1,33 @@
+mysql> create table Employee(id int,name varchar(10),salary numeric,managerId int,PRIMARY KEY (id));
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> insert into Employee values(1,"Joe",70000,3);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Employee values(2,"Henry",80000,4);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Employee values(3,"Sam",60000,NULL);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Employee values(4,"Max",90000,NULL);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from Employee;
++----+-------+--------+-----------+
+| id | name  | salary | managerId |
++----+-------+--------+-----------+
+|  1 | Joe   |  70000 |         3 |
+|  2 | Henry |  80000 |         4 |
+|  3 | Sam   |  60000 |      NULL |
+|  4 | Max   |  90000 |      NULL |
++----+-------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select e1.name from Employee e1 INNER JOIN employee e2 ON e1.managerId=e2.id WHERE e1.salary>e2.salary;
++------+
+| name |
++------+
+| Joe  |
++------+
+1 row in set (0.00 sec)
