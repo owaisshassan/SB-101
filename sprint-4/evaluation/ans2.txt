@@ -1,0 +1,20 @@
+ACID:
+
+In SQL, when we perform Transactions, there are few properties involved with it known as ACID properties that decide the overall behaviour of a transaction, it's initialisation and execution.
+
+
+1. Atomicity:
+
+It basically means in a transaction , there should never be incompleteness of any of the processes/queries which means either you perform all the queries or you do not perform any of the queries.
+
+2. Consistency:
+
+It means transation data should be consistent throughout i.e. before and after transaction, the data should be same.
+
+3. Isolation:
+
+It refers to the fact that any process or query from one transaction should not alter in any process of any other query.
+
+4. Durability:
+
+It means transaction should be durable and independent.
